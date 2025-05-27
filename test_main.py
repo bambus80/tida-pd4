@@ -8,10 +8,24 @@ def test_zad1():
     assert result == expected
 
 
+def test_zad1_blank_input():
+    data = []
+    result = zad1(data)
+    expected = []
+    assert result == expected
+
+
 def test_zad2():
     data = [2, -4, 6, 8, -10, 100, -6, 5]
     result = zad2(data)
     expected = [6, 8, -10, 100]
+    assert result == expected
+
+
+def test_zad2_blank_input():
+    data = []
+    result = zad2(data)
+    expected = []
     assert result == expected
 
 
@@ -30,6 +44,13 @@ def test_zad3():
     assert result == expected
 
 
+def test_zad3_n_zero():
+    deta = 0
+    result = zad3(deta)
+    expected = [0]
+    assert result == expected
+
+
 def test_zad4():
     data = 3
     result = zad4(data)
@@ -41,4 +62,10 @@ def test_zad4():
         "cab",
         "cba",
     ]
+    assert result == expected
+
+def test_zad4_n_zero():
+    data = 0
+    result = zad4(data)
+    expected = []
     assert result == expected

@@ -14,6 +14,8 @@ print("Zadanie 1")
 input_arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]
 
 def zad1(arr: list[int]) -> list[int]:
+    if not arr:
+        return []
     i = 0
     while i in range(0, len(arr) - 1):
         if i > 0 and not arr[i] > arr[i - 1]:
@@ -38,6 +40,8 @@ print("\nZadanie 2")
 input_arr = [2, -4, 6, 8, -10, 100, -6, 5]
 
 def zad2(arr: list[int]) -> list[int]:
+    if not arr:
+        return []
     max_sum = sum = arr[0]
     start = end = start_t = 0
     for i in range(1, len(arr)):
@@ -64,6 +68,8 @@ print(zad2(input_arr))
 print("\nZadanie 3")
 
 def zad3(n: int) -> list[int]:
+    if not n:
+        return [n]
     arr = []
 
     def backtrack(curr: list, rest: int, start: int) -> None:
@@ -90,6 +96,8 @@ for i in zad3(5):
 print("\nZadanie 4")
 
 def zad4(n: int) -> list[str]:
+    if not n:
+        return []
     letters = [chr(97 + i) for i in range(n)]
     final = []
 
@@ -99,7 +107,6 @@ def zad4(n: int) -> list[str]:
             i -= 1
         if i == -1:
             return False
-
         j = len(arr) - 1
         while arr[j] <= arr[i]:
             j -= 1
