@@ -15,6 +15,13 @@ def test_zad1_blank_input():
     assert result == expected
 
 
+def test_zad1_one_input():
+    data = [1]
+    result = zad1(data)
+    expected = [1]
+    assert result == expected
+
+
 def test_zad2():
     data = [2, -4, 6, 8, -10, 100, -6, 5]
     result = zad2(data)
@@ -26,6 +33,13 @@ def test_zad2_blank_input():
     data = []
     result = zad2(data)
     expected = []
+    assert result == expected
+
+
+def test_zad2_one_input():
+    data = [1]
+    result = zad2(data)
+    expected = [1]
     assert result == expected
 
 
