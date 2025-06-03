@@ -83,7 +83,7 @@ def zad3(n: int) -> list[int]:
         return [n]
     arr = []
 
-    def backtrack(curr: list, rest: int, start: int) -> None:
+    def backtrack(curr: list[int], rest: int, start: int) -> None:
         if rest == 0:
             arr.append(curr[:])
             return
@@ -123,14 +123,13 @@ def zad4(n: int) -> list[str]:
             j -= 1
         arr[i], arr[j] = arr[j], arr[i]
 
-        arr[i + 1:] = reversed(arr[i + 1:])
+        arr[i + 1:] = arr[i + 1:][::-1]
         return True
 
     final.append("".join(letters))
     while permutate(letters):
         final.append("".join(letters))
     return final
-
 
 for i in zad4(3):
     print(i)
