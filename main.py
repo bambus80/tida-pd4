@@ -16,13 +16,24 @@ input_arr = [10, 22, 9, 33, 21, 50, 41, 60, 80]
 def zad1(arr: list[int]) -> list[int]:
     if not arr:
         return []
-    i = 0
-    while i in range(0, len(arr) - 1):
-        if i > 0 and not arr[i] > arr[i - 1]:
-            arr.pop(i)
-        else:
-            i += 1
-    return arr
+    n = len(arr)
+    dp = [1] * n
+    prev = [-1] * n
+
+    for i in range(n):
+        for j in range(i):
+            if arr[j] < arr[i] and dp[j] + 1 > dp[i]:
+                dp[i] = dp[j] + 1
+                prev[i] = j
+
+    max_len = max(dp)
+    max_len_idx = dp.index(max_len)
+    final = []
+    while not max_len_idx == -1:
+        final.append(arr[max_len_idx])
+        max_len_idx = prev[max_len_idx]
+    return final[::-1]
+
 
 print(zad1(input_arr))
 

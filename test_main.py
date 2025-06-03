@@ -64,6 +64,7 @@ def test_zad4():
     ]
     assert result == expected
 
+
 def test_zad4_n_zero():
     data = 0
     result = zad4(data)
